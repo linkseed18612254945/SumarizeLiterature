@@ -48,6 +48,3 @@ def sort_sentences(sentences, words, sim_func=default_sentence_similarity):
         item = util.AttrDict(sentence=sentences[index], weight=feature_score, words=util.clean_stop_words(words[index]))
         sorted_sentences[index] = item
     return sorted_sentences
-
-if __name__ == '__main__':
-    print(sort_sentences(['你好', '中国', '人'], ['我', '是', '中国', '人']))

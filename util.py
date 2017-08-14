@@ -235,6 +235,3 @@ def data_pre_process_from_csv(path, back_up_path, pickle_data=True):
         print('已将处理好的文献打包存储')
 
 
-if __name__ == '__main__':
-    load_model()
-    release_model()

@@ -1,5 +1,4 @@
 from rouge import FilesRouge
-import util
 import plot
 import os
 
@@ -34,6 +33,7 @@ def get_avg_rouge(rouge_result):
         avg_rouge[t] /= len(rouge_result)
     return avg_rouge
 
+
 def get_avg_rouge_prf(rouge_result):
     avg_rouge = {'rouge-1': {'p': 0, 'r': 0, 'f': 0}, 'rouge-l': {'p': 0, 'r': 0, 'f': 0}, 'rouge-2': {'p': 0, 'r': 0, 'f': 0}}
     for r in rouge_result:
@@ -46,6 +46,7 @@ def get_avg_rouge_prf(rouge_result):
         avg_rouge[t]['f'] /= len(rouge_result)
         avg_rouge[t]['p'] /= len(rouge_result)
     return avg_rouge
+
 
 def plot_baseline_bar():
     hyp_result = get_rouge(hyp_path)
@@ -65,8 +66,4 @@ def plot_bar(name):
             recalls_rouge[x].append(r[x]['f'])
     plot.draw_bar(name, recalls_rouge[name])
 
-if __name__ == '__main__':
-    # plot_baseline_bar()
-    rouge_result = get_rouge(hyp_path)
-    print(get_avg_rouge_prf(rouge_result))
 

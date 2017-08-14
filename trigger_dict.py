@@ -77,6 +77,4 @@ class TriggerDict:
             trigger_dict[word] = Counter(trigger_dict[word])
         return trigger_dict
 
-if __name__ == '__main__':
-    pass
 
